@@ -1,63 +1,33 @@
 {
   "name": "nodejstest",
-  "version": "0.0.1",
-  "description": "getting starting ",
-  "keywords": [
-    "loopback-application",
-    "loopback"
-  ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "version": "1.0.0",
+  "main": "server/server.js",
   "engines": {
-    "node": ">=10.16"
+    "node": ">=6"
   },
   "scripts": {
-    "build": "lb-tsc",
-    "build:watch": "lb-tsc --watch",
-    "lint": "npm run eslint && npm run prettier:check",
-    "lint:fix": "npm run eslint:fix && npm run prettier:fix",
-    "prettier:cli": "lb-prettier \"**/*.ts\" \"**/*.js\"",
-    "prettier:check": "npm run prettier:cli -- -l",
-    "prettier:fix": "npm run prettier:cli -- --write",
-    "eslint": "lb-eslint --report-unused-disable-directives .",
-    "eslint:fix": "npm run eslint -- --fix",
-    "docker:build": "docker build -t nodejstest .",
-    "docker:run": "docker run -p 3000:3000 -d nodejstest",
-    "premigrate": "npm run build",
-    "migrate": "node ./dist/migrate",
-    "preopenapi-spec": "npm run build",
-    "openapi-spec": "node ./dist/openapi-spec",
-    "rebuild": "npm run clean && npm run build",
-    "prestart": "npm run rebuild",
-    "start": "node -r source-map-support/register .",
-    "clean": "lb-clean dist *.tsbuildinfo .eslintcache"
+    "lint": "eslint .",
+    "start": "node .",
+    "posttest": "npm run lint"
   },
-  "repository": {
-    "type": "git",
-    "url": ""
-  },
-  "author": "Hai Fang Wang <whaifang@cn.ibm.com>",
-  "license": "",
-  "files": [
-    "README.md",
-    "dist",
-    "src"
-  ],
   "dependencies": {
-    "@loopback/boot": "^3.1.2",
-    "@loopback/core": "^2.13.1",
-    "@loopback/repository": "^3.3.0",
-    "@loopback/rest": "^9.1.1",
-    "@loopback/rest-explorer": "^3.0.5",
-    "@loopback/service-proxy": "^3.0.5",
-    "tslib": "^2.0.0"
+    "compression": "^1.0.3",
+    "cors": "^2.5.2",
+    "helmet": "^3.10.0",
+    "loopback-boot": "^2.6.5",
+    "serve-favicon": "^2.0.1",
+    "strong-error-handler": "^4.0.0",
+    "loopback-component-explorer": "^6.2.0",
+    "loopback": "^3.22.0"
   },
   "devDependencies": {
-    "@loopback/build": "^6.2.8",
-    "source-map-support": "^0.5.19",
-    "@types/node": "^10.17.48",
-    "@loopback/eslint-config": "^10.0.4",
-    "eslint": "^7.15.0",
-    "typescript": "~4.1.2"
-  }
+    "eslint": "^3.17.1",
+    "eslint-config-loopback": "^8.0.0"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "license": "UNLICENSED",
+  "description": "nodejstest"
 }

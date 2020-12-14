@@ -1,0 +1,14 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodejs4
+  namespace: demo
+spec:
+  ports:
+    - name: http-port
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
+      nodePort: 30674
+  selector:
+    app: nodejs4

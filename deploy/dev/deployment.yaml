@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: nodejs4-dev
-        image: reg.demo.com/k8s-deploy-images/devops-java-sample:SNAPSHOT-39
+        image: $REGISTRY/$HARBOR_PROJECT/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000

@@ -1,29 +1,27 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: nodejs5
+  name: nodejs4-dev
   namespace: demo
   labels:
-    app: nodejs5
+    app: nodejs4-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodejs5
-      version: v1
+      app: nodejs4-dev
   template:
     metadata:
       labels:
-        app: nodejs5
+        app: nodejs4-dev
     spec:
       containers:
-        - name: nodejs5
-          image: $REGISTRY/$HARBOR_PROJECT/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
-          ports:
-            - name: http-port
-              containerPort: 3000
-              protocol: TCP
-          imagePullPolicy: IfNotPresent
+      - name: nodejs4-dev
+        image: reg.demo.com/k8s-deploy-images/devops-java-sample:SNAPSHOT-39
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        env:
       imagePullSecrets:
-        - name: harbor-id
-      schedulerName: default-scheduler
+      - name: harbor-id
+      dnsPolicy: ClusterFirstWithHostNet

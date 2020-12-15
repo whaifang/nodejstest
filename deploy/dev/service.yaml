@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nodejs5
+  name: nodejs4-dev
   namespace: demo
 spec:
   ports:
@@ -10,5 +10,6 @@ spec:
       port: 3000
       targetPort: 3000
       nodePort: 30675
+  type: NodePort
   selector:
-    app: nodejs5
+    app: nodejs4-dev

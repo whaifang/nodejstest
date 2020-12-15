@@ -1,7 +1,7 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: nodejs5-v1
+  name: nodejs5
   namespace: demo
   labels:
     app: nodejs5
@@ -17,7 +17,7 @@ spec:
         app: nodejs5
     spec:
       containers:
-        - name: container-95uqzn
+        - name: nodejs5
           image: $REGISTRY/$HARBOR_PROJECT/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
           ports:
             - name: http-port

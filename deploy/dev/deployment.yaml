@@ -1,20 +1,20 @@
 kind: Deployment
 apiVersion: apps/v1
 metadata:
-  name: nodejs4-v1
+  name: nodejs5-v1
   namespace: demo
   labels:
-    app: nodejs4
+    app: nodejs5
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodejs4
+      app: nodejs5
       version: v1
   template:
     metadata:
       labels:
-        app: nodejs4
+        app: nodejs5
     spec:
       containers:
         - name: container-95uqzn

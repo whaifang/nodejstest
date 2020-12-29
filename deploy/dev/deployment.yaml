@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nodejs4-dev
+  name: nodejs-dev
   namespace: demo
   labels:
-    app: nodejs4-dev
+    app: nodejs-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: nodejs4-dev
+      app: nodejs-dev
   template:
     metadata:
       labels:
-        app: nodejs4-dev
+        app: nodejs-dev
     spec:
       containers:
-      - name: nodejs4-dev
+      - name: nodejs-dev
         image: $REGISTRY/$HARBOR_PROJECT/$APP_NAME:SNAPSHOT-$BUILD_NUMBER
         imagePullPolicy: IfNotPresent
         ports:

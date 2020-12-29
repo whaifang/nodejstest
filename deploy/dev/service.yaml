@@ -1,7 +1,7 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: nodejs4-dev
+  name: nodejs-dev
   namespace: demo
 spec:
   ports:
@@ -9,7 +9,7 @@ spec:
       protocol: TCP
       port: 3000
       targetPort: 3000
-      nodePort: 30675
+      nodePort: 30676
   type: NodePort
   selector:
-    app: nodejs4-dev
+    app: nodejs-dev

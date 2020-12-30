@@ -6,6 +6,3 @@ This is a demo for Kubesphere Pipeline.
 This is a demo for Kubesphere Pipeline.
 This is a demo for Kubesphere Pipeline.
 This is a demo for Kubesphere Pipeline.
-This is a demo for Kubesphere Pipeline.
-This is a demo for Kubesphere Pipeline.
-This is a demo for Kubesphere Pipeline.
